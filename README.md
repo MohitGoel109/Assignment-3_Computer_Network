@@ -1,67 +1,100 @@
-# Assignment-3-Computer-Networks
+# Assignment 3 – Computer Networks Lab
 
-Submitted By:- Mohit Goel
+**Submitted by:** Mohit Goel  
+**Roll Number:** 2301730109  
+**Program:** B.Tech CSE (AI/ML), Section B  
+**Course:** Computer Networks Lab  
 
-Roll Number:- 2301730109
+---
 
-Program:- BTechCSE(AI/ML) Section:- B
+## 📌 Routing Tables
 
-Course:- Computer Networks Lab
+### 1. Routing Information Protocol (RIP)
 
-# Routing Tables
+#### 🔗 Copper Straight-Through Connections
 
-## 1. Routing Information Protocol
+| From | To  | Interface Connection |
+|------|-----|----------------------|
+| PC0  | S1  | Fa0/1                |
+| PC1  | S1  | Fa0/2                |
+| S1   | R0  | Fa0/24 → Fa2/0       |
+| PC2  | S2  | Fa0/1                |
+| PC3  | S2  | Fa0/2                |
+| S2   | R1  | Fa0/24 → Fa2/0       |
+| PC4  | S3  | Fa0/1                |
+| PC5  | S3  | Fa0/2                |
+| S3   | R2  | Fa0/24 → Fa2/0       |
 
-### Copper Straight-Through Connections
+#### 🔌 Serial DTE Connections
 
-| From | To  | Port/Interface        |
-|------|-----|-----------------------|
-| PC0  | S1  | fa0/1                 |
-| PC1  | S1  | fa0/2                 |
-| S1   | R0  | fa0/24 → fa2/0        |
-| PC2  | S2  | fa0/1                 |
-| PC3  | S2  | fa0/2                 |
-| S2   | R1  | fa0/24 → fa2/0        |
-| PC4  | S3  | fa0/1                 |
-| PC5  | S3  | fa0/2                 |
-| S3   | R2  | fa0/24 → fa2/0        |
+| From | To  | Interface Connection |
+|------|-----|----------------------|
+| R0   | R1  | Se0/0 ↔ Se1/0        |
+| R1   | R2  | Se0/0 ↔ Se1/0        |
 
-### Serial DTE Connections
+---
 
-| From | To  | Port/Interface        |
-|------|-----|-----------------------|
-| R0   | R1  | se0/0 ↔ se1/0         |
-| R1   | R2  | se0/0 ↔ se1/0         |
+## 🌐 Network Design
 
-## Network Design
+The network topology is created using **Cisco Packet Tracer** and includes:
 
-The network topology was designed using Cisco Packet Tracer consisting of three routers (R0, R1, R2), three switches (S1, S2, S3), and multiple end devices (PCs).
+- 3 Routers (R0, R1, R2)  
+- 3 Switches (S1, S2, S3)  
+- Multiple PCs (end devices)  
 
-Each router is connected to a switch, and each switch connects to multiple PCs, forming three different local area networks (LANs). The routers are interconnected using serial DTE links to enable communication between different networks.
+Each router connects to a switch, forming three separate LANs. The routers are interconnected using serial DTE links, allowing communication between different networks.
 
-IP addresses were assigned to all devices, and routing protocols (RIP and OSPF) were configured to enable communication across networks.
+IP addresses are assigned to all devices, and routing protocols (**RIP** and **OSPF**) are configured to enable network communication.
 
-The design ensures:
-- Proper segmentation of networks
-- Efficient communication between LANs
-- Scalability for adding more devices
+### ✅ Design Highlights
 
-## Comparison of RIP and OSPF (Based on Simulation)
+- Proper network segmentation  
+- Efficient inter-LAN communication  
+- Scalable architecture for future expansion  
 
-From the simulations performed using Cisco Packet Tracer, the following conclusions were observed:
+---
 
-### 1. Convergence Time
-RIP showed slower convergence as routing updates were exchanged periodically. OSPF converged faster due to immediate exchange of link-state information.
-**Conclusion:** OSPF converges faster than RIP.
+## ⚖️ RIP vs OSPF (Simulation Comparison)
 
-### 2. Routing Metric
-RIP used hop count as the metric, which sometimes resulted in non-optimal path selection. OSPF used cost based on bandwidth, leading to better routing decisions.
-**Conclusion:** OSPF provides more optimal path selection.
+### 1. ⏱️ Convergence Time
+- RIP converges slowly due to periodic updates  
+- OSPF converges faster using link-state updates  
 
-### 3. Efficiency
-RIP periodically sent full routing tables, increasing network traffic. OSPF sent updates only when changes occurred, making it more efficient.
-**Conclusion:** OSPF is more efficient than RIP.
+**👉 Conclusion:** OSPF is faster than RIP  
 
-### 4. Scalability
-RIP is suitable for small networks due to its limitations. OSPF handled larger and more complex networks effectively.
-**Conclusion:** OSPF is more scalable than RIP.
+---
+
+### 2. 📊 Routing Metric
+- RIP uses hop count  
+- OSPF uses cost (based on bandwidth)  
+
+**👉 Conclusion:** OSPF provides better path selection  
+
+---
+
+### 3. ⚙️ Efficiency
+- RIP sends full routing tables periodically  
+- OSPF sends updates only when changes occur  
+
+**👉 Conclusion:** OSPF is more efficient  
+
+---
+
+### 4. 📈 Scalability
+- RIP is suitable for small networks  
+- OSPF supports large and complex networks  
+
+**👉 Conclusion:** OSPF is more scalable  
+
+---
+
+## 📎 Tools Used
+- Cisco Packet Tracer
+
+---
+
+## 📌 Summary
+
+This assignment demonstrates the implementation of RIP and OSPF routing protocols and highlights their differences in terms of convergence speed, efficiency, and scalability through simulation.
+
+---
