@@ -3,7 +3,8 @@
 **Submitted by:** Mohit Goel  
 **Roll Number:** 2301730109  
 **Program:** B.Tech CSE (AI/ML), Section B  
-**Course:** Computer Networks Lab  
+**Course:** Computer Networks Lab 
+**GitHub Link:** [Assignment Link](https://github.com/MohitGoel109/Assignment-3_Computer_Network)
 
 ---
 
